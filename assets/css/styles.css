@@ -1,0 +1,609 @@
+/* ==========  FONTS ========== */
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap");
+
+/* ==========  VARIABLES & THEMES ========== */
+
+:root {
+  --primary-color: #cf0f0f;
+  --primary-color-contrast: #ffffff;
+  --field-background-color: #000;
+}
+
+.light-theme {
+  --page-background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #ffffff 65%,
+    rgba(255, 255, 255, 0.75) 100%
+  );
+  --header-background-color: #e3e3e3;
+  --highlight-color: #000000;
+  --featured-font-family: "Archivo", sans-serif;
+  --character-top-image-src: url("../images/characters/kids-on-the-bike.svg");
+  --character-top-image-color: #ffffff;
+  --character-bottom-image-src: url("../images/characters/inverted-world-monster.svg");
+  --character-bottom-image-color: #e5e5e5;
+  --background-lamp-image: url("../images/backgrounds/lamps.png");
+  --footer-background-color: #b5bbbf;
+  --footer-tape-color: #ffffff;
+}
+
+.dark-theme {
+  --page-background: linear-gradient(
+    180deg,
+    #050000 0%,
+    #130404 65%,
+    rgba(19, 1, 1, 0.75) 100%
+  );
+  --header-background-color: #220f0f;
+  --highlight-color: #ffffff;
+  --featured-font-family: "Rubik Glitch", sans-serif;
+  --character-bottom-image-src: url("../images/characters/kids-on-the-bike.svg");
+  --character-bottom-image-color: rgba(255, 255, 255, 0.1);
+  --character-top-image-src: url("../images/characters/inverted-world-monster.svg");
+  --character-top-image-color: #000;
+  --background-lamp-image: url("../images/backgrounds/lamps-inverted.png");
+  --footer-background-color: #000;
+  --footer-tape-color: #2d262a;
+}
+
+.dark-theme button,
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3 {
+  font-weight: normal;
+  letter-spacing: 5px;
+}
+
+.dark-theme .invert-element {
+  transform: rotateZ(180deg) scaleX(-1);
+}
+
+.dark-theme #section-inverted-world .invert-element {
+  transform: rotateZ(180deg);
+}
+
+/* ========== GENERIC STYLES ========== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  transition: 1s;
+}
+
+body {
+  background: var(--page-background);
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  font-family: var(--featured-font-family);
+  font-size: 3rem;
+  color: var(--primary-color);
+
+  margin-bottom: 40px;
+}
+
+p,
+input,
+textarea,
+label {
+  font-family: "Libre Baskerville", serif;
+}
+
+p {
+  color: var(--highlight-color);
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  background-color: var(--field-background-color);
+
+  font-size: 1rem;
+  color: var(--primary-color-contrast);
+
+  border: 2px solid var(--primary-color-contrast);
+
+  padding: 8px;
+  margin-bottom: 24px;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  border-color: black;
+}
+
+button {
+  background-color: transparent;
+
+  text-transform: uppercase;
+  font-family: var(--featured-font-family);
+  font-size: 1.25rem;
+  font-weight: 900;
+
+  padding: 16px 32px;
+
+  cursor: pointer;
+  transition: background 1s;
+}
+
+/* ========== HEADER STYLES ========== */
+
+header {
+  position: relative;
+  background-color: var(--header-background-color);
+  min-height: 850px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding-inline: 5%;
+}
+
+header::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url("../images/banner/florest.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 90%;
+  filter: saturate(0);
+  opacity: 0.2;
+}
+
+.header-content {
+  max-width: 700px;
+
+  text-align: center;
+
+  padding: 80px 20px;
+  z-index: 2;
+}
+
+.header-content img {
+  width: 80%;
+}
+
+.header-content p {
+  margin: 30px 0 50px;
+}
+
+.header-content button {
+  color: var(--primary-color);
+  border: 3px solid var(--primary-color);
+}
+
+.header-content button:hover {
+  background-color: var(--primary-color);
+  color: var(--primary-color-contrast);
+}
+
+/* ========== WORLD CHARACTERES STYLES ========== */
+
+.world-characters {
+  width: 100%;
+  max-width: 900px;
+  position: absolute;
+}
+
+.world-characters#top-characters {
+  bottom: -3px;
+  height: 100%;
+  background-color: var(--character-top-image-color);
+
+  mask: var(--character-top-image-src) bottom / 100% no-repeat;
+  -webkit-mask: var(--character-top-image-src) bottom / 100% no-repeat;
+}
+
+.world-characters#bottom-characters {
+  position: relative;
+  top: 3px;
+  height: 500px;
+  background-color: var(--character-bottom-image-color);
+
+  transform: rotateZ(180deg) scaleX(-1);
+
+  mask: var(--character-bottom-image-src) bottom / 100% no-repeat;
+  -webkit-mask: var(--character-bottom-image-src) bottom / 100% no-repeat;
+
+  z-index: -1;
+}
+
+/* ========== MAIN STYLES ========== */
+
+main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+main::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--page-background) no-repeat,
+    url("../images/backgrounds/florest.png") no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+/* ========== SECTIONS STYLES ========== */
+
+section {
+  display: flex;
+  justify-content: space-between;
+
+  padding-inline: 5%;
+  margin-bottom: 95px;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+/* ========== SECTION 01 - INVERTED WORLD ========== */
+
+#section-inverted-world {
+  align-items: center;
+
+  margin-top: -250px;
+}
+
+#section-inverted-world .section-texts {
+  width: 50%;
+}
+
+#section-inverted-world .section-texts h2 {
+  max-width: 300px;
+}
+
+/* ========== SECTION 02 - STRANGER THINGS TRAILER ========== */
+
+#section-stranger-things-trailer .section-texts {
+  width: 50%;
+  text-align: right;
+}
+
+#section-stranger-things-trailer .section-texts h2 {
+  max-width: 425px;
+  display: inline-block;
+}
+
+#section-stranger-things-trailer .video-frame {
+  max-width: 460px;
+  height: 215px;
+  width: 45%;
+  background-color: var(--primary-color);
+}
+
+#section-stranger-things-trailer .video-frame iframe {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  bottom: 24px;
+  left: 24px;
+
+  border: 2px solid;
+  border-image: linear-gradient(
+    var(--primary-color),
+    var(--primary-color-contrast)
+  );
+  border-image-slice: 10;
+}
+
+/* ========== SECTION 03 - STRANGER THINGS GALLERY ========== */
+
+#section-stranger-things-gallery {
+  width: 100%;
+  background: var(--background-lamp-image) 120% / 50% no-repeat;
+
+  justify-content: center;
+}
+
+#section-stranger-things-gallery .container {
+  width: 100%;
+}
+
+#section-stranger-things-gallery .container h2 {
+  max-width: 800px;
+}
+
+#section-stranger-things-gallery .gallery-container {
+  display: flex;
+  gap: 50px;
+
+  padding-left: 20px;
+}
+
+#section-stranger-things-gallery .gallery-image {
+  width: 250px;
+  height: 250px;
+  box-sizing: initial;
+
+  outline: 20px solid var(--highlight-color);
+  border: 3px solid var(--primary-color);
+}
+
+#section-stranger-things-gallery .gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 10px solid var(--highlight-color);
+}
+
+/* ========== SECTION 04 - DUNGEONS & DRAGONS FORM ========== */
+
+#section-form {
+  text-align: center;
+
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+#section-form h2 {
+  max-width: 600px;
+}
+
+#section-form .form-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#section-form .form-content h3 {
+  flex-basis: 30%;
+  text-align: left;
+  color: var(--highlight-color);
+
+  margin: 0;
+}
+
+#section-form .form-content h3 span {
+  color: var(--primary-color);
+}
+
+#section-form .form-container {
+  flex-basis: 50%;
+  position: relative;
+}
+
+#section-form .form-container::after {
+  content: "";
+  background-color: var(--highlight-color);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: -1;
+}
+
+#section-form .form-container form {
+  background-color: var(--primary-color);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: left;
+  color: var(--primary-color-contrast);
+
+  padding: 24px;
+}
+
+#section-form .form-container form button {
+  align-self: center;
+  max-width: 300px;
+  background-color: var(--field-background-color);
+  color: var(--primary-color-contrast);
+  border: none;
+}
+
+#section-form .form-container form button:hover {
+  background-color: var(--primary-color-contrast);
+  color: var(--field-background-color);
+}
+
+/* ========== FOOTER STYLES ========== */
+
+footer {
+  position: relative;
+  background-color: var(--footer-background-color);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 60px 5%;
+
+  overflow: hidden;
+}
+
+footer p {
+  z-index: 2;
+  max-width: 700px;
+
+  margin-bottom: 24px;
+}
+
+footer::before,
+footer::after {
+  content: "";
+  width: 300px;
+  height: 200px;
+
+  background-color: var(--footer-tape-color);
+  mask: url("../images/footer/tape.svg") bottom / 100% no-repeat;
+  -webkit-mask: url("../images/footer/tape.svg") bottom / 100% no-repeat;
+
+  position: absolute;
+  bottom: -30px;
+}
+
+footer::before {
+  left: -50px;
+  transform: rotateZ(-10deg);
+}
+
+footer::after {
+  right: -50px;
+  transform: rotateZ(10deg);
+}
+
+@media (max-width: 1023px) {
+  /* ========== GENERIC STYLES ========== */
+
+  h1,
+  h2,
+  h3 {
+    font-size: 2.25rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+
+  /* ========== HEADER STYLES ========== */
+
+  header {
+    min-height: 650px;
+  }
+
+  .header-content {
+    padding: 80px 0;
+  }
+
+  /* ========== SECTIONS STYLES ========== */
+  section {
+    flex-direction: column;
+  }
+  
+    .container {
+      max-width: 700px;
+    }
+
+  /* ========== SECTION 01 - INVERTED WORLD ========== */
+
+  #section-inverted-world .section-texts {
+    width: 90%;
+    margin-bottom: 50px;
+  }
+
+  #section-inverted-world img {
+    max-width: 380px;
+    width: 80%;
+  }
+
+  /* ========== SECTION 02 - STRANGER THINGS TRAILER ========== */
+
+  #section-stranger-things-trailer {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  #section-stranger-things-trailer .section-texts {
+    width: 90%;
+    margin-bottom: 50px;
+  }
+
+  #section-stranger-things-trailer .video-frame {
+    width: 100%;
+  }
+
+  #section-stranger-things-trailer .video-frame iframe {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  /* ========== SECTION 03 - STRANGER THINGS GALLERY ========== */
+
+  #section-stranger-things-gallery {
+    align-items: center;
+    background: initial;
+  }
+
+  #section-stranger-things-gallery .gallery-container {
+    flex-flow: row wrap;
+    justify-content: center;
+
+    padding-left: 0;
+  }
+
+  #section-stranger-things-gallery .gallery-image {
+    flex-shrink: 0;
+  }
+
+  /* ========== SECTION 04 - DUNGEONS & DRAGONS FORM ========== */
+
+  #section-form {
+    width: 100%;
+
+    gap: 0;
+  }
+
+  #section-form p {
+    margin-bottom: 50px;
+  }
+
+  #section-form .form-content {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  #section-form .form-content h3 {
+    flex-basis: initial;
+
+    font-size: 1.75rem;
+
+    margin-bottom: 50px;
+  }
+
+  #section-form .form-container {
+    flex-basis: initial;
+    width: 100%;
+  }
+
+  #section-form .form-container::after {
+    top: 10px;
+    left: 10px;
+  }
+
+  /* ========== FOOTER STYLES ========== */
+
+  footer p {
+    margin-bottom: 50px;
+  }
+
+  footer::before,
+  footer::after {
+    content: "";
+    max-width: 300px;
+    max-height: 200px;
+    width: 40%;
+
+    background-color: var(--footer-tape-color);
+    mask: url("../images/footer/tape.svg") bottom / 100% no-repeat;
+    -webkit-mask: url("../images/footer/tape.svg") bottom / 100% no-repeat;
+
+    position: absolute;
+    bottom: -30px;
+  }
+}
