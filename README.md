@@ -1,107 +1,75 @@
-<p align="center">
-    <img width="300" src="https://micheleambrosio.github.io/semana-frontend-mundo-invertido/assets/images/banner/logo.svg">
-</p>
+# Semana Front-end Mundo Invertido DIO.
 
--------
-Uma jornada para quem não tem medo do desconhecido. O caminho para o Mundo Invertido é incerto, repleto de obstáculos e perigos. Porém, a recompensa é grande: salvar Hawkings e o mundo todo das garras de Vecna. Você está preparado(a)? 
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/diasPaulo/semana-frontend-mundo-invertido?style=flat)
+![GitHub language count](https://img.shields.io/github/languages/count/diasPaulo/semana-frontend-mundo-invertido?style=flat)
 
-## ▶️ Semana Front-end
-- [Live Dia 01](https://www.youtube.com/watch?v=FZgIQUDn8zo)
-- [Live Dia 02](https://www.youtube.com/watch?v=WHbhgxJLbN4)
-## 💻 Tecnologias
-- HTML
-- CSS
-- JavaScript
+Projeto construído para fins didáticos, com o objetivo de colocar em prática os conhecimentos de HTML, CSS e JavaScript aprendidos na DIO.
 
-## 💬 Assuntos abordados
-- HTML
-    - Estruturação da página 
-    - Semântica
-    - Acessibilidade
-    - Web Scraping
-    - SEO
-- CSS
-    - Posicionamentos
-    - Pseudo-elementos
-    - Pseudo-classes
-    - Flexbox
-    - Animações 
-- JavaScript
-    - Introdução ao JavaScript
-    - Manipulação do DOM
-    - Introdução ao Firebase
-    - Integração com o Firebase
+O repositório do projeto encontra-se disponível [neste link](https://github.com/digitalinnovationone/semana-frontend-mundo-invertido/).
 
-## 🎨 Variáveis do Tema CSS
-```css
-/*** VARIABLES & THEMES ***/
+## O Projeto
+---
 
-:root {
-  --primary-color: #cf0f0f;
-  --primary-color-contrast: #ffffff;
-  --field-background-color: #000;
-}
+<br />
 
-.light-theme {
-  --page-background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #ffffff 65%,
-    rgba(255, 255, 255, 0.75) 100%
-  );
-  --header-background-color: #e3e3e3;
-  --highlight-color: #000000;
-  --featured-font-family: "Archivo", sans-serif;
-  --character-top-image-src: url("../images/characters/kids-on-the-bike.svg");
-  --character-top-image-color: #ffffff;
-  --character-bottom-image-src: url("../images/characters/inverted-world-monster.svg");
-  --character-bottom-image-color: #e5e5e5;
-  --background-lamp-image: url("../images/backgrounds/lamps.png");
-  --footer-background-color: #b5bbbf;
-}
+![Mockup do projeto mostrando a tela do projeto em um notebook](./images/mockup.png)
 
-.dark-theme {
-  --page-background: linear-gradient(
-    180deg,
-    #050000 0%,
-    #130404 65%,
-    rgba(19, 1, 1, 0.75) 100%
-  );
-  --header-background-color: #220f0f;
-  --highlight-color: #ffffff;
-  --featured-font-family: "Rubik Glitch", sans-serif;
-  --character-bottom-image-src: url("../images/characters/kids-on-the-bike.svg");
-  --character-bottom-image-color: rgba(255, 255, 255, 0.1);
-  --character-top-image-src: url("../images/characters/inverted-world-monster.svg");
-  --character-top-image-color: #000;
-  --background-lamp-image: url("../images/backgrounds/lamps-inverted.png");
-  --footer-background-color: #000;
-}
+> Projeto desenvolvido com o intuíto de aprimorar minhas habilidades de HTML, CSS e Javascript. Este projeto foi retirado do [repositório da semana Frontend Mundo Invertido da DIO](https://github.com/digitalinnovationone/semana-front-end-mundo-invertido/) na qual foi realizado nos dias 23, 24 e 25 de setembro de 2022 com o intuito didático e disceminação de conhecimento na área de front-end.
+
+## Tecnologias
+
+ - HTML
+ - CSS
+ - Javascript
+ - Firebase
+
+## ☕ Desenvolvimento
+
+Inspirada na série Stranger Things, landing page desenvolvida durante a semana Front-end da DIO. 
+
+Durante a semana foram realizadas abordagens para o desenvolvimento do projeto apenas para a plataforma desktop. Com o intuito de tornar o projeto mais acessível, estendi o desenvolvimento para dispositivos portáteis.
+
+O projeto conta com conexão com bando de dados utilizando o Firestore Database da Firebase. Sendo este responsável pelo armazenamento de dados provenientes do formulário no final da página.
+
+Mais detalhes sobre as tecnologias empregadas e o projeto estão disponíveis no [repositório da Semana Front-end DIO](https://github.com/digitalinnovationone/semana-frontend-mundo-invertido/).
+
+## 🚀 Instalação e Utilização
+
+Clonando o repositório você poderá usufluir da landing page exceto pelo banco de dados.
+
+Para utilização do banco de dados é necessário criar uma base de dados no Firebase: 
+
+1. Crie uma conta na Firebase (necessário tem uma conta Google)
+2. No menu "Criação" clique em "Firestore Database"
+3. Dê um nome ao projeto
+4. Na etapa seguinte não é preciso ativar o Google Analytics, não iremos abordar este tema, por tanto desative o Google Analytics e crie o projeto
+5. Após a criação do projeto, clique em "Firestore Database" e, em seguida, em "Criar banco de dados"
+6. Defina as regras de permissão, defina o local de armazenamento e ative
+7. No símbolo de engrenagem ⚙️ e em "Configurações do projeto"
+8. No fim da página, em "Seus aplicativos" clique no símbolo "</>"
+9. Dê um apelido para o App e clique em "Registrar app"
+10. Em seguida, marque a opção "Usar a tag \<script>"
+11. Copie toda a linha de código abaixo do comentário "// Your web app's Firebase configuration"
+
+Agora será necessário alterar algumas informações no arquivo assets/js/firebase/app.js
+
+Subistitua a linha a seguir pela linha copiada no passo 11.
+
 ```
-## 🔗 Links auxiliares
+const firebaseConfig = {
+  apiKey: "Your apiKey",
+  authDomain: "authDomain",
+  projectId: "projectId",
+  storageBucket: "storageBucket",
+  messagingSenderId: "messagingSenderId",
+  appId: "Your appId"
+};
+```
+Pronto. Agora poderá usufluir de toda funcionalidade desta landing page.
 
-- [W3C - World Wide Web Consortium](http://w3c.org)
-- [WAI - Web Acessibility Initiative](https://www.w3.org/WAI/)
-- [WCAG 2](https://www.w3.org/WAI/WCAG21/quickref/) 
-- [Figma](https://www.figma.com/file/I3Q42CcVUziRN3iMfTrbfb/Stranger-Things?node-id=0%3A1) 
-- [Demo](https://micheleambrosio.github.io/semana-frontend-mundo-invertido/) 
-## 🌎 Nossas redes sociais
-<p>
-    <img align=left margin=10 width=80 src="https://avatars.githubusercontent.com/u/16018277?v=4"/>
-    <p>&nbsp&nbsp&nbspDiogo Medeiros Mainardes<br>
-    &nbsp&nbsp&nbsp<a href="http://instagram.com/diogomainardes.dev">Instagram</a>&nbsp;|&nbsp;<a href="https://github.com/diogomainardes">GitHub</a>&nbsp;|&nbsp;<a href="https://www.linkedin.com/in/diogomainardes/">LinkedIn</a>&nbsp;|&nbsp;<a href="https://www.twitch.tv/dimmbr">Twitch</a></p>
-</p>
-<br/><br/>
-<p>
-    <img align=left margin=10 width=80 src="https://avatars.githubusercontent.com/u/55519539?v=4"/>
-    <p>&nbsp&nbsp&nbspMichele Queiroz Ambrosio<br>
-    &nbsp&nbsp&nbsp<a href="http://instagram.com/programi_">Instagram</a>&nbsp;|&nbsp;<a href="https://github.com/micheleambrosio">GitHub</a>&nbsp;|&nbsp;<a href="https://www.linkedin.com/in/michele-ambrosio-a4899661/">LinkedIn</a>&nbsp;|&nbsp;<a href="https://www.twitch.tv/michele_ambrosio">Twitch</a></p>
-</p>
-<br/><br/>
-<p>
-    <img align=left margin=10 width=80 src="https://avatars.githubusercontent.com/u/3266640?v=4"/>
-    <p>&nbsp&nbsp&nbspRenan Johannsen de Paula <br>
-    &nbsp&nbsp&nbsp<a href="https://github.com/RenanJPaula">GitHub</a>&nbsp;|&nbsp;
-    <a href="https://www.linkedin.com/in/renanjpaula/">LinkedIn</a>
-    </p>
-</p>
+Para mais detalhes sobre a criação e utilização do Firebse acesse [a documentação oficial](https://firebase.google.com/docs/guides?authuser=0&%3Bhl=pt&hl=pt)
+
+Você também pode conferir este projeto através da [demo](https://diaspaulo.github.io/semana-frontend-mundo-invertido/).
+
+
+[⬆ Voltar ao topo](#Semana_Front-end_Mundo_Invertido_DIO.)
