@@ -73,4 +73,4 @@ Para mais detalhes sobre a criação e utilização do Firebse acesse [a documen
 
 Você também pode conferir este projeto através da [demo](https://diaspaulo.github.io/semana-frontend-mundo-invertido/).
 
-[⬆ Voltar ao topo](#Semana_Front-end_Mundo_Invertido_DIO.)
+[⬆ Voltar ao topo](#semana-front-end-mundo-invertido-dio)
