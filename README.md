@@ -14,7 +14,7 @@ O repositório do projeto encontra-se disponível [neste link](https://github.co
 
 ![Mockup do projeto mostrando a tela do projeto em um notebook](./images/mockup.png)
 
-> Projeto desenvolvido com o intuíto de aprimorar minhas habilidades de HTML, CSS e Javascript. Este projeto foi retirado do [repositório da semana Frontend Mundo Invertido da DIO](https://github.com/digitalinnovationone/semana-front-end-mundo-invertido/) na qual foi realizado nos dias 23, 24 e 25 de setembro de 2022 com o intuito didático e disceminação de conhecimento na área de front-end.
+> Projeto desenvolvido com o intuito de aprimorar minhas habilidades de HTML, CSS e Javascript. Este projeto foi retirado do [repositório da semana Frontend Mundo Invertido da DIO](https://github.com/digitalinnovationone/semana-frontend-mundo-invertido/) na qual foi realizado nos dias 23, 24 e 25 de setembro de 2022 com o intuito didático e disseminação de conhecimento na área de front-end.
 
 ## Tecnologias
 
@@ -35,7 +35,7 @@ Mais detalhes sobre as tecnologias empregadas e o projeto estão disponíveis no
 
 ## 🚀 Instalação e Utilização
 
-Clonando o repositório você poderá usufluir da landing page exceto pelo banco de dados.
+Clonando o repositório você poderá usufruir da landing page exceto pelo banco de dados.
 
 Para utilização do banco de dados é necessário criar uma base de dados no Firebase: 
 
@@ -53,7 +53,7 @@ Para utilização do banco de dados é necessário criar uma base de dados no Fi
 
 Agora será necessário alterar algumas informações no arquivo assets/js/firebase/app.js
 
-Subistitua a linha a seguir pela linha copiada no passo 11.
+Substitua a linha a seguir pela linha copiada no passo 11.
 
 ```
 const firebaseConfig = {
@@ -65,7 +65,7 @@ const firebaseConfig = {
   appId: "Your appId"
 };
 ```
-Pronto. Agora poderá usufluir de toda funcionalidade desta landing page.
+Pronto. Agora poderá usufruir de toda funcionalidade desta landing page.
 
 Para mais detalhes sobre a criação e utilização do Firebse acesse [a documentação oficial](https://firebase.google.com/docs/guides?authuser=0&%3Bhl=pt&hl=pt)
 
